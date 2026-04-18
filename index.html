@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Premium Domain For Sale</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --bg: #080808;
+    --bg2: #111111;
+    --bg3: #1a1a1a;
+    --border: rgba(201,168,76,0.15);
+    --border-hover: rgba(201,168,76,0.4);
+    --text: #f0ede8;
+    --text2: #888880;
+    --text3: #555550;
+    --green: #4caf7d;
+    --wa: #25D366;
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+  nav {
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+  .nav-brand { font-size: 13px; font-family: 'DM Mono', monospace; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; }
+  .nav-contact { display: flex; gap: 10px; }
+  .nav-contact a {
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    transition: all 0.2s;
+  }
+  .nav-wa { background: var(--wa); color: #fff; }
+  .nav-x { background: #000; color: #fff; border: 1px solid #333; }
+  .nav-em { border: 1px solid var(--border); color: var(--text2); }
+  .nav-em:hover { border-color: var(--border-hover); color: var(--text); }
+
+  .hero { padding: 5rem 0 3rem; text-align: center; }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    animation: fadeUp 0.5s ease both;
+  }
+  .hero-domain {
+    font-size: clamp(22px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.5s 0.1s ease both;
+    word-break: break-word;
+  }
+  .hero-domain .tld { color: var(--gold); }
+  .hero-price {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.5s 0.2s ease both;
+    font-family: 'DM Mono', monospace;
+  }
+  .hero-note {
+    font-size: 13px;
+    color: var(--text3);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.5s 0.25s ease both;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.5s 0.3s ease both;
+    margin-bottom: 3rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: 'Syne', sans-serif;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .btn-x { background: #000; color: #fff; border: 1px solid #333; }
+  .btn-em { background: var(--bg3); color: var(--text); border: 1px solid var(--border); }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+    margin: 2rem 0;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 4rem;
+  }
+  .domain-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: block;
+  }
+  .domain-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+  .dc-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; word-break: break-word; line-height: 1.4; }
+  .dc-price { font-size: 15px; font-weight: 700; color: var(--green); font-family: 'DM Mono', monospace; margin-bottom: 8px; }
+  .dc-cta { font-size: 11px; color: var(--gold); font-family: 'DM Mono', monospace; }
+
+  .contact-section {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .contact-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 0.5rem; }
+  .contact-section p { font-size: 13px; color: var(--text2); margin-bottom: 1.5rem; font-family: 'DM Mono', monospace; }
+  .contact-info { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .contact-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 1px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem; gap: 8px; }
+    .nav-brand { font-size: 10px; letter-spacing: 1px; }
+    .domains-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Domain Top Seller</div>
+  <div class="nav-contact">
+    <a class="nav-wa" href="https://wa.me/213797205850" target="_blank">WhatsApp</a>
+    <a class="nav-x" href="https://x.com/domainTopseller" target="_blank">𝕏 Twitter</a>
+    <a class="nav-em" href="mailto:racimramdani123@gmail.com">Email</a>
+  </div>
+</nav>
+
+<div class="container">
+  <section class="hero">
+    <div class="hero-tag">Premium Domain For Sale</div>
+    <h1 class="hero-domain">
+      <span id="domain-name-part">MoralClaw</span><span class="tld" id="domain-tld">.com</span>
+    </h1>
+    <div class="hero-price" id="hero-price">$1,455</div>
+    <div class="hero-note">Price is negotiable · Make an offer</div>
+    <div class="hero-btns">
+      <a class="btn btn-wa" id="hero-wa" href="https://wa.me/213797205850?text=Hi, I'm interested in buying MoralClaw.com" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-x" href="https://x.com/domainTopseller" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Twitter / X
+      </a>
+      <a class="btn btn-em" id="hero-em" href="mailto:racimramdani123@gmail.com?subject=Interested in MoralClaw.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <div style="margin-bottom: 3rem;">
+    <div class="section-label">More premium domains available</div>
+    <div class="domains-grid" id="domains-grid"></div>
+  </div>
+
+  <div class="contact-section">
+    <h2>Ready to make an offer?</h2>
+    <p>Reach out through any channel — fast response guaranteed</p>
+    <div class="contact-info">
+      <a class="contact-pill" href="https://wa.me/213797205850" target="_blank">+213 797 205 850</a>
+      <a class="contact-pill" href="mailto:racimramdani123@gmail.com">racimramdani123@gmail.com</a>
+      <a class="contact-pill" href="https://x.com/domainTopseller" target="_blank">@domainTopseller</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Domain Top Seller &nbsp;·&nbsp; All domains are available for purchase &nbsp;·&nbsp; Prices negotiable
+</footer>
+
+<script>
+const ALL_DOMAINS = [
+  { name: "AdBlockApps.com", price: 88 },
+  { name: "ChicagoRentalAgents.com", price: 250 },
+  { name: "homesaleottawa.com", price: 250 },
+  { name: "promptessays.com", price: 100 },
+  { name: "americansdebt.com", price: 100 },
+  { name: "linknumbers.com", price: 88 },
+  { name: "capteeth.com", price: 99 },
+  { name: "startupgrill.com", price: 99 },
+  { name: "halehop.com", price: 99 },
+  { name: "Onepaypoint.com", price: 155 },
+  { name: "Aitigre.com", price: 175 },
+  { name: "diamjewelry.com", price: 150 },
+  { name: "AiUnchain.com", price: 199 },
+  { name: "MoralClaw.com", price: 1455 },
+  { name: "LLMCore.co", price: 1555 },
+  { name: "AgentLLM.co", price: 1888 },
+];
+
+function detectCurrentDomain() {
+  const host = window.location.hostname.replace('www.', '');
+  const found = ALL_DOMAINS.find(d => d.name.toLowerCase() === host.toLowerCase());
+  return found || ALL_DOMAINS.find(d => d.name === "MoralClaw.com");
+}
+
+function splitDomain(name) {
+  const dotIndex = name.lastIndexOf('.');
+  return { base: name.slice(0, dotIndex), tld: name.slice(dotIndex) };
+}
+
+function renderPage() {
+  const current = detectCurrentDomain();
+  const { base, tld } = splitDomain(current.name);
+
+  document.title = current.name + " — For Sale";
+  document.getElementById("domain-name-part").textContent = base;
+  document.getElementById("domain-tld").textContent = tld;
+  document.getElementById("hero-price").textContent = "$" + current.price.toLocaleString();
+  document.getElementById("hero-wa").href = `https://wa.me/213797205850?text=Hi, I'm interested in buying ${current.name}`;
+  document.getElementById("hero-em").href = `mailto:racimramdani123@gmail.com?subject=Interested in ${current.name}`;
+
+  const others = ALL_DOMAINS.filter(d => d.name !== current.name);
+  document.getElementById("domains-grid").innerHTML = others.map(d => `
+    <a class="domain-card" href="https://${d.name}" target="_blank">
+      <div class="dc-name">${d.name}</div>
+      <div class="dc-price">$${d.price.toLocaleString()}</div>
+      <div class="dc-cta">View domain →</div>
+    </a>
+  `).join("");
+}
+
+renderPage();
+</script>
+</body>
+</html>
